@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group 'net.omisoft'
+version '1.0-SNAPSHOT'
+
+jar {
+    manifest {
+        attributes "Main-Class": "net.omisoft.track.Main"
+    }
+
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    compile group: 'com.1stleg', name: 'jnativehook', version: '2.1.0'
+}
