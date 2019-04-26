@@ -7,7 +7,7 @@ public class GlobalNativeKeyListenerExample implements NativeKeyListener {
 
     @Override
     public void nativeKeyPressed(NativeKeyEvent e) {
-        System.out.println("Keyboard pressed: " + NativeKeyEvent.getKeyText(e.getKeyCode()));
+        System.out.println("Keyboard/mouse pressed: " + NativeKeyEvent.getKeyText(e.getKeyCode()));
     }
 
     @Override
